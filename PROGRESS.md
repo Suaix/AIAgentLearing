@@ -2,6 +2,16 @@
 
 > 最后更新：2026-06-19
 
+## 环境状态
+
+| 工具 | 版本 | 路径 |
+|------|------|------|
+| macOS | Darwin 24.6.0 (arm64) | - |
+| Homebrew | 6.0.2 | /opt/homebrew/bin/brew |
+| Python | 3.12.13 | /opt/homebrew/bin/python3.12 |
+| uv | 0.11.22 | /opt/homebrew/bin/uv |
+| Git | 系统自带 | - |
+
 ## 模块进度
 
 | 模块 | 状态 | 开始日期 | 完成日期 | 笔记链接 | 代码链接 |
@@ -27,7 +37,8 @@
 
 ## 里程碑
 
-- [ ] 完成环境搭建（Python + API Key 配置）— 目标：2026-06-20
+- [x] 完成环境搭建（Git + Python 3.12 + uv）— 完成：2026-06-19
+- [ ] 配置 API Key（Anthropic / OpenAI）— 目标：待定
 - [ ] 完成第一个 Tool Use Agent — 目标：待定
 - [ ] 完成第一个 RAG 系统 — 目标：待定
 - [ ] 完成第一个多 Agent 协作系统 — 目标：待定
