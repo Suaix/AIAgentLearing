@@ -27,7 +27,17 @@ def test_temperature():
     temp_value=0.0
     count=0
     
-    while(count < 3):
-        client.chat.completions.create(
-            model="deepseek-v4-flash"
-        )
+    for temp_value in [0.0, 1.5]:
+        for count in range(3):
+            response = client.chat.completions.create(
+                model="deepseek-v4-flash",
+                messages=[
+                    {"role":"user", "content": question}
+                ],
+                temperature=temp_value,
+                max_tokens=1000,
+            )
+            print(f"\n 第{count+1}次调用：temperature={temp_value:.1f}, 回复字数={len(response.choices[0].message.content)}, prompt_tokens={response.usage.prompt_tokens}, completion_tokens={response.usage.completion_tokens}, 回复内容={response.choices[0].message.content[:60]}")
+
+if __name__ == "__main__":
+    test_temperature()
