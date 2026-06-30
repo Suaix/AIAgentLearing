@@ -1,6 +1,6 @@
 # 整体学习进度
 
-> 最后更新：2026-06-29
+> 最后更新：2026-06-30
 
 ## 环境状态
 
@@ -31,10 +31,10 @@
 
 ## 时间统计
 
-- 总学习天数：2 天
-- 总学习时长：约 6 小时
+- 总学习天数：3 天
+- 总学习时长：约 9 小时
 - 完成模块数：0 / 10
-- 已建立专题笔记：2 份（[[notes/llm-statelessness]]、[[notes/tokenization]]）
+- 已建立专题笔记：3 份（[[notes/llm-statelessness]]、[[notes/tokenization]]、[[notes/transformer-attention]]）
 
 ## 里程碑
 
@@ -55,3 +55,4 @@
 |------|---------|------|
 | 2026-06-19 | 环境搭建 + 第一个API调用 + LLM核心概念 | [2026-06-19.md](learning-daily/2026-06-19.md) |
 | 2026-06-29 | 学习方法论v2.0 + LLM无状态性与上下文管理实战 | [2026-06-29.md](learning-daily/2026-06-29.md) |
+| 2026-06-30 | Transformer架构 + Self-Attention机制 + 4个动手实验 | [2026-06-30.md](learning-daily/2026-06-30.md) |

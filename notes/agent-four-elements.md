@@ -4,6 +4,7 @@
 > 关联模块：模块 1 — 基础概念
 > 关联笔记：[[llm-statelessness]]（短期记忆 = messages 数组）、[[tokenization]]（Token 是记忆的计量单位）
 > 代码：`code/01-foundations/agent_four_elements.py`、`agent_step3.py`
+> 评估记录：待评估
 
 ---
 

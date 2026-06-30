@@ -4,6 +4,7 @@
 > 关联模块：模块 1 — 基础概念
 > 关联笔记：[[llm-statelessness]]（Token 是 messages 数组的基本计量单位）
 > 代码：`code/01-foundations/tokenization_lab.py`、`tokenization_step3.py`
+> 评估记录：待评估
 
 ---
 

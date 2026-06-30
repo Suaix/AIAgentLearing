@@ -4,6 +4,7 @@
 > 关联模块：模块 1 — 基础概念
 > 关联笔记：[[tokenization]]（Token 是上下文管理的基本计量单位）
 > 代码：`code/01-foundations/chat_loop.py`、`chat_loop_exercises.py`
+> 评估记录：待评估
 
 ---
 
