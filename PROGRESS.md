@@ -16,7 +16,7 @@
 
 | 模块 | 状态 | 开始日期 | 完成日期 | 笔记链接 | 代码链接 |
 |------|------|---------|---------|---------|---------|
-| 01-基础概念 | 🔄 进行中 | 2026-06-19 | - | [笔记](../learning-daily/2026-06-19.md) | [代码](../code/01-foundations/) |
+| 01-基础概念 | ✅ 已完成 | 2026-06-19 | 2026-06-30 | [模块评估](../assessments/module/2026-06-30-module-01-assessment.md) | [代码](../code/01-foundations/) |
 | 02-Prompt工程 | ⬜ 未开始 | - | - | - | - |
 | 03-Tool Use | ⬜ 未开始 | - | - | - | - |
 | 04-RAG | ⬜ 未开始 | - | - | - | - |
@@ -33,8 +33,9 @@
 
 - 总学习天数：3 天
 - 总学习时长：约 9 小时
-- 完成模块数：0 / 10
-- 已建立专题笔记：3 份（[[notes/llm-statelessness]]、[[notes/tokenization]]、[[notes/transformer-attention]]）
+- 完成模块数：1 / 10
+- 已建立专题笔记：5 份（[[notes/llm-statelessness]]、[[notes/tokenization]]、[[notes/transformer-attention]]、[[notes/agent-four-elements]]、[[notes/model-comparison]]）
+- 已建立评估记录：2 份（Attention 🟡、模型对比 🟡）
 
 ## 里程碑
 
