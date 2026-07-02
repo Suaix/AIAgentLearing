@@ -1,6 +1,6 @@
 # 整体学习进度
 
-> 最后更新：2026-06-30
+> 最后更新：2026-07-02
 
 ## 环境状态
 
@@ -17,7 +17,7 @@
 | 模块 | 状态 | 开始日期 | 完成日期 | 笔记链接 | 代码链接 |
 |------|------|---------|---------|---------|---------|
 | 01-基础概念 | ✅ 已完成 | 2026-06-19 | 2026-06-30 | [模块评估](../assessments/module/2026-06-30-module-01-assessment.md) | [代码](../code/01-foundations/) |
-| 02-Prompt工程 | ⬜ 未开始 | - | - | - | - |
+| 02-Prompt工程 | 🔄 进行中 | 2026-07-02 | - | - | [代码](../code/02-prompt-engineering/) |
 | 03-Tool Use | ⬜ 未开始 | - | - | - | - |
 | 04-RAG | ⬜ 未开始 | - | - | - | - |
 | 05-Agent架构 | ⬜ 未开始 | - | - | - | - |
@@ -31,11 +31,11 @@
 
 ## 时间统计
 
-- 总学习天数：3 天
-- 总学习时长：约 9 小时
+- 总学习天数：4 天
+- 总学习时长：约 12.5 小时
 - 完成模块数：1 / 10
-- 已建立专题笔记：5 份（[[notes/llm-statelessness]]、[[notes/tokenization]]、[[notes/transformer-attention]]、[[notes/agent-four-elements]]、[[notes/model-comparison]]）
-- 已建立评估记录：2 份（Attention 🟡、模型对比 🟡）
+- 已建立专题笔记：7 份（+ [[notes/chain-of-thought-prompting]]）
+- 已建立评估记录：4 份（+ CoT 🟢）
 
 ## 里程碑
 
@@ -57,3 +57,4 @@
 | 2026-06-19 | 环境搭建 + 第一个API调用 + LLM核心概念 | [2026-06-19.md](learning-daily/2026-06-19.md) |
 | 2026-06-29 | 学习方法论v2.0 + LLM无状态性与上下文管理实战 | [2026-06-29.md](learning-daily/2026-06-29.md) |
 | 2026-06-30 | Transformer架构 + Self-Attention机制 + 4个动手实验 | [2026-06-30.md](learning-daily/2026-06-30.md) |
+| 2026-07-02 | Few-shot/Zero-shot + CoT Prompting（两个主题，8个渐进任务） | [2026-07-02.md](learning-daily/2026-07-02.md) |
