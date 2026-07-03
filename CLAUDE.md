@@ -158,6 +158,7 @@ Step 5 — 独立里程碑（模块结束时，不是每节）
 - 文件名：`topic-name.md`（如 `tokenization.md`、`agent-four-elements.md`）
 - 必须包含：一句话总结、核心概念、代码关联（`code/` 目录下的文件路径）、与后续模块的关联
 - 使用 `[[other-note-name]]` 链接相关笔记
+- **模板**：`notes/_template.md`——所有新增笔记严格按此模板的结构和格式生成
 - **禁止**在提交代码时遗漏对应的 notes 文件
 
 **评估记录规范**：
