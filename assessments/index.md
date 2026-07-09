@@ -1,6 +1,6 @@
 # 学习效果评估索引
 
-> 最后更新：2026-07-03
+> 最后更新：2026-07-09
 
 ## 评分体系速查
 
@@ -39,8 +39,8 @@
 | Chain-of-Thought | B | 2026-07-02 | 2.75 | 🟢 良好 | [查看](topic/2026-07-02-cot-assessment.md) |
 | ReAct Prompting | A | 2026-07-02 | 2.75 | 🟢 良好 | [查看](topic/2026-07-02-react-prompting-assessment.md) |
 | 结构化输出 | B | 2026-07-03 | 2.75 | 🟢 良好 | [查看](topic/2026-07-03-json-mode-assessment.md) |
-| System Prompt 设计 | A | — | — | — | 待学习 |
-| Prompt 版本管理 | C | — | — | — | 待学习 |
+| System Prompt 设计 | A | 2026-07-09 | 2.75 | 🟢 良好 | [查看](topic/2026-07-09-system-prompt-design-assessment.md) |
+| Prompt 版本管理 | C | 2026-07-09 | 2.75 | 🟢 良好 | [查看](topic/2026-07-09-prompt-version-management-assessment.md) |
 
 ---
 
@@ -49,7 +49,7 @@
 | 模块 | 主题数 | 已评估 | 平均分 | A级薄弱数 | 状态 | 模块评估 |
 |------|--------|--------|--------|----------|------|---------|
 | 01-基础概念 | 5 | 2 | 2.00 | 0 | ✅ 已完成 | [模块评估](module/2026-06-30-module-01-assessment.md) — 🟢 良好 (2.55) |
-| 02-Prompt工程 | 6 | 4 | 2.75 | 0 | 🔄 进行中 | — |
+| 02-Prompt工程 | 6 | 6 | 2.75 | 0 | ✅ 已完成（Topic 阶段） | — |
 | 03-Tool Use | — | 0 | — | 0 | ⬜ 未开始 | — |
 | 04-RAG | — | 0 | — | 0 | ⬜ 未开始 | — |
 | 05-Agent架构 | — | 0 | — | 0 | ⬜ 未开始 | — |
