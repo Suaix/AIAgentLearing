@@ -2,7 +2,7 @@
 
 > 创建日期：2026-06-30
 > 关联模块：模块 1 — 基础概念
-> 关联笔记：[[llm-statelessness]]（上下文理解的机制基础）、[[tokenization]]（Token → Embedding 的入口）、[[agent-four-elements]]（Agent 感知层的底层原理）
+> 关联笔记：[[02-llm-statelessness]]（上下文理解的机制基础）、[[01-tokenization]]（Token → Embedding 的入口）、[[04-agent-four-elements]]（Agent 感知层的底层原理）
 > 代码：`code/01-foundations/attention_warmup_v2.py`、`attention_step3.py`
 > 评估记录：[2026-06-30 主题评估](../assessments/topic/2026-06-30-transformer-attention-assessment.md) — 🟡 基础
 
@@ -110,5 +110,5 @@ Attention(Q, K, V) = softmax(Q·K^T / √d_k) · V
 1. Attention Is All You Need (Vaswani et al., 2017) — https://arxiv.org/abs/1706.03762
 2. The Illustrated Transformer (Jay Alammar) — https://jalammar.github.io/illustrated-transformer/ — 访问日期 2026-06-30
 3. Lilian Weng, "Attention? Attention!" — https://lilianweng.github.io/posts/2018-06-24-attention/ — 访问日期 2026-06-30
-4. [[tokenization]] — Token → Embedding 的入口
-5. [[llm-statelessness]] — 上下文理解的机制基础
+4. [[01-tokenization]] — Token → Embedding 的入口
+5. [[02-llm-statelessness]] — 上下文理解的机制基础

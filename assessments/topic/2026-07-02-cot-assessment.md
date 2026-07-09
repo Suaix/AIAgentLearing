@@ -128,7 +128,7 @@
 
 | 资源类型 | 路径 | 说明 |
 |---------|------|------|
-| 专题笔记 | `notes/chain-of-thought-prompting.md` | 本主题的结构化笔记 |
+| 专题笔记 | `notes/07-chain-of-thought-prompting.md` | 本主题的结构化笔记 |
 | 学习记录 | `learning-daily/2026-07-02.md` | 当日学习过程 |
 | 热身代码 | `code/02-prompt-engineering/cot_warmup.py` | Step 0 三组 CoT 对比实验 |
 | 练习代码 | `code/02-prompt-engineering/cot_step3.py` | Step 3 四个渐进任务 |

@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-09
 > 关联模块：模块 2 — Prompt Engineering
-> 关联笔记：[[few-shot-prompting]]（Few-shot 示例常用于 System Prompt 中定义输出样板）、[[react-prompting]]（ReAct 模式下 System Prompt 定义 Agent 的推理循环规则）、[[json-mode-structured-output]]（JSON Mode 控制输出格式，System Prompt 控制输出内容和行为）
+> 关联笔记：[[06-few-shot-prompting]]（Few-shot 示例常用于 System Prompt 中定义输出样板）、[[08-react-prompting]]（ReAct 模式下 System Prompt 定义 Agent 的推理循环规则）、[[09-json-mode-structured-output]]（JSON Mode 控制输出格式，System Prompt 控制输出内容和行为）
 > 代码：`code/02-prompt-engineering/system_prompt_warmup.py`、`code/02-prompt-engineering/system_prompt_step3.py`
 > 评估记录：[2026-07-09-system-prompt-design-assessment.md](../assessments/topic/2026-07-09-system-prompt-design-assessment.md)
 
@@ -159,6 +159,6 @@ response = client.chat.completions.create(
 
 1. Anthropic — "System Prompts" — https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts — 访问日期：2026-07-09
 2. OpenAI — "Prompt Engineering Guide" — https://platform.openai.com/docs/guides/prompt-engineering — 访问日期：2026-07-09
-3. [[few-shot-prompting]] — System Prompt 中常嵌入 Few-shot 示例作为行为规范
-4. [[react-prompting]] — ReAct 的推理循环规则通过 System Prompt 注入
-5. [[json-mode-structured-output]] — System Prompt 控制行为边界，JSON Mode 控制输出格式——两者互补
+3. [[06-few-shot-prompting]] — System Prompt 中常嵌入 Few-shot 示例作为行为规范
+4. [[08-react-prompting]] — ReAct 的推理循环规则通过 System Prompt 注入
+5. [[09-json-mode-structured-output]] — System Prompt 控制行为边界，JSON Mode 控制输出格式——两者互补

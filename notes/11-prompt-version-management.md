@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-09
 > 关联模块：模块 2 — Prompt Engineering
-> 关联笔记：[[system-prompt-design]]（版本管理的对象就是 System Prompt 模板）、[[few-shot-prompting]]（Few-shot 示例可作为 Prompt 模板的一部分进行版本控制）
+> 关联笔记：[[10-system-prompt-design]]（版本管理的对象就是 System Prompt 模板）、[[06-few-shot-prompting]]（Few-shot 示例可作为 Prompt 模板的一部分进行版本控制）
 > 代码：`code/02-prompt-engineering/prompt_version_warmup.py`、`code/02-prompt-engineering/prompt_version_step3.py`
 > 评估记录：[2026-07-09-prompt-version-management-assessment.md](../assessments/topic/2026-07-09-prompt-version-management-assessment.md)
 
@@ -69,4 +69,4 @@ PROMPT_REGISTRY = {
 ## 参考来源
 
 1. promptfoo — "Prompt Versioning Best Practices" — https://www.promptfoo.dev/blog/prompt-versioning/ — 访问日期：2026-07-09
-2. [[system-prompt-design]] — 版本管理的对象就是 System Prompt
+2. [[10-system-prompt-design]] — 版本管理的对象就是 System Prompt

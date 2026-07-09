@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-03
 > 关联模块：模块 2 — Prompt Engineering
-> 关联笔记：[[few-shot-prompting]]（结构化输出常与 Few-shot 示例搭配）、[[react-prompting]]（ReAct 的 Action 格式也依赖结构化输出）、[[chain-of-thought-prompting]]（CoT 是推理过程结构化，JSON Mode 是输出格式结构化）
+> 关联笔记：[[06-few-shot-prompting]]（结构化输出常与 Few-shot 示例搭配）、[[08-react-prompting]]（ReAct 的 Action 格式也依赖结构化输出）、[[07-chain-of-thought-prompting]]（CoT 是推理过程结构化，JSON Mode 是输出格式结构化）
 > 代码：`code/02-prompt-engineering/json_mode_warmup.py`、`json_mode_step3.py`
 > 评估记录：[2026-07-03-json-mode-assessment.md](../assessments/topic/2026-07-03-json-mode-assessment.md)
 
@@ -124,5 +124,5 @@ def build_extraction_prompt(schema_desc: dict) -> str:
 
 1. DeepSeek API Docs — "JSON Output" — https://api-docs.deepseek.com/guides/json_mode — 访问日期：2026-07-03
 2. OpenAI API Docs — "Structured Outputs" — https://platform.openai.com/docs/guides/structured-outputs — 访问日期：2026-07-03
-3. [[few-shot-prompting]] — Few-shot 示例常与 JSON Mode 搭配，用示例约束输出格式
-4. [[react-prompting]] — ReAct 的 Action 解析依赖结构化输出（正则匹配 Action[参数]）
+3. [[06-few-shot-prompting]] — Few-shot 示例常与 JSON Mode 搭配，用示例约束输出格式
+4. [[08-react-prompting]] — ReAct 的 Action 解析依赖结构化输出（正则匹配 Action[参数]）

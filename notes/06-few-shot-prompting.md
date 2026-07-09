@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-02
 > 关联模块：模块 2 — Prompt Engineering
-> 关联笔记：[[llm-statelessness]]（无状态性是 Few-shot 能工作的前提）、[[tokenization]]（Token 是 Prompt 的基本计量单位）
+> 关联笔记：[[02-llm-statelessness]]（无状态性是 Few-shot 能工作的前提）、[[01-tokenization]]（Token 是 Prompt 的基本计量单位）
 > 代码：`code/02-prompt-engineering/few_shot_warmup.py`、`few_shot_step3.py`
 > 评估记录：[2026-07-02-few-shot-prompting-assessment.md](../assessments/topic/2026-07-02-few-shot-prompting-assessment.md)
 
@@ -44,7 +44,7 @@ Few-shot 不是训练，是"示范"：
 - **Few-shot 示例不改变模型权重**——模型没有"学习"任何新东西
 - **示例的作用是"激活"模型中已有的模式匹配能力**
 - **退出对话后，示例的效果完全消失**——每次新对话都需要重新给示例
-- 这就是为什么 `[[llm-statelessness]]` 是 Few-shot 能工作的前提：模型每次只看你给的 messages，不会"记住"上一段对话中学到的 pattern
+- 这就是为什么 `[[02-llm-statelessness]]` 是 Few-shot 能工作的前提：模型每次只看你给的 messages，不会"记住"上一段对话中学到的 pattern
 
 ---
 
@@ -149,5 +149,5 @@ response = client.chat.completions.create(
 
 1. Anthropic API Docs — Prompt Engineering Guide — https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering
 2. Lilian Weng's Blog — "Prompt Engineering" — https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/（访问日期：2026-07-02）
-3. [[llm-statelessness]] — In-Context Learning 与无状态性的关系
+3. [[02-llm-statelessness]] — In-Context Learning 与无状态性的关系
 4. OpenAI API Docs — Chat Completions（temperature 参数说明）— https://platform.openai.com/docs/api-reference/chat

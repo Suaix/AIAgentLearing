@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-02
 > 关联模块：模块 2 — Prompt Engineering
-> 关联笔记：[[few-shot-prompting]]（CoT 是 Few-shot 的特殊形式——教"怎么想"而非"输出什么"）、[[llm-statelessness]]（推理 token 也要全量发送，无状态性是 CoT 能工作的前提）
+> 关联笔记：[[06-few-shot-prompting]]（CoT 是 Few-shot 的特殊形式——教"怎么想"而非"输出什么"）、[[02-llm-statelessness]]（推理 token 也要全量发送，无状态性是 CoT 能工作的前提）
 > 代码：`code/02-prompt-engineering/cot_warmup.py`、`cot_step3.py`
 > 评估记录：[2026-07-02-cot-assessment.md](../assessments/topic/2026-07-02-cot-assessment.md)
 
@@ -137,5 +137,5 @@ N. 答案: [最终答案]
 
 1. Wei et al. (2022) — "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" — https://arxiv.org/abs/2201.11903
 2. Kojima et al. (2022) — "Large Language Models are Zero-Shot Reasoners"（Zero-shot CoT 原始论文）— https://arxiv.org/abs/2205.11916
-3. [[few-shot-prompting]] — CoT 与普通 Few-shot 的关系
-4. [[llm-statelessness]] — CoT 依赖无状态性（推理 token 每次都要全量发送）
+3. [[06-few-shot-prompting]] — CoT 与普通 Few-shot 的关系
+4. [[02-llm-statelessness]] — CoT 依赖无状态性（推理 token 每次都要全量发送）

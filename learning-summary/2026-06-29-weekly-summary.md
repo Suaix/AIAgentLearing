@@ -21,9 +21,9 @@
 
 ### 专题笔记已建立
 
-- [[../notes/llm-statelessness]] — LLM 无状态性心智模型
-- [[../notes/tokenization]] — BPE 算法、Token 效率、成本计算
-- [[../notes/agent-four-elements]] — 感知→规划→执行→记忆 四要素框架
+- [[../notes/02-llm-statelessness]] — LLM 无状态性心智模型
+- [[../notes/01-tokenization]] — BPE 算法、Token 效率、成本计算
+- [[../notes/04-agent-four-elements]] — 感知→规划→执行→记忆 四要素框架
 
 ---
 

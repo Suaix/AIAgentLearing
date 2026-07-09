@@ -2,7 +2,7 @@
 
 > 创建日期：2026-06-30
 > 关联模块：模块 1 — 基础概念
-> 关联笔记：[[transformer-attention]]（模型的底层架构）、[[agent-four-elements]]（选型影响 Agent 能力）
+> 关联笔记：[[03-transformer-attention]]（模型的底层架构）、[[04-agent-four-elements]]（选型影响 Agent 能力）
 > 代码：`code/01-foundations/model_comparison.py`、`model_step3.py`
 > 评估记录：🟡 基础（1.75分）
 > 掌握状态：🟡 基础

@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-02
 > 关联模块：模块 2 — Prompt Engineering
-> 关联笔记：[[chain-of-thought-prompting]]（ReAct = CoT + 工具调用）、[[few-shot-prompting]]（System Prompt 中的工具声明本质上是 Few-shot 示例）
+> 关联笔记：[[07-chain-of-thought-prompting]]（ReAct = CoT + 工具调用）、[[06-few-shot-prompting]]（System Prompt 中的工具声明本质上是 Few-shot 示例）
 > 代码：`code/02-prompt-engineering/react_warmup.py`、`react_step3.py`
 > 评估记录：[2026-07-02-react-prompting-assessment.md](../assessments/topic/2026-07-02-react-prompting-assessment.md)
 
@@ -130,5 +130,5 @@ for turn in range(max_turns):
 
 1. Yao et al. (2022) — "ReAct: Synergizing Reasoning and Acting in Language Models" — https://arxiv.org/abs/2210.03629
 2. Anthropic API Docs — Tool Use / Function Calling — https://docs.anthropic.com/en/docs/build-with-claude/tool-use
-3. [[chain-of-thought-prompting]] — CoT 是 ReAct 去掉 Action/Observation 的特例
-4. [[few-shot-prompting]] — System Prompt 中的工具声明 = Few-shot 示例
+3. [[07-chain-of-thought-prompting]] — CoT 是 ReAct 去掉 Action/Observation 的特例
+4. [[06-few-shot-prompting]] — System Prompt 中的工具声明 = Few-shot 示例

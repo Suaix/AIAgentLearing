@@ -2,7 +2,7 @@
 
 > 创建日期：2026-06-29
 > 关联模块：模块 1 — 基础概念
-> 关联笔记：[[tokenization]]（Token 是上下文管理的基本计量单位）
+> 关联笔记：[[01-tokenization]]（Token 是上下文管理的基本计量单位）
 > 代码：`code/01-foundations/chat_loop.py`、`chat_loop_exercises.py`
 > 评估记录：待评估
 
@@ -117,4 +117,4 @@ while True:
 
 1. OpenAI API Docs — Chat Completions — https://platform.openai.com/docs/api-reference/chat
 2. DeepSeek API Docs — https://platform.deepseek.com/api-docs
-3. [[tokenization]] — Token 计量与 messages 数组的 token 增长关系
+3. [[01-tokenization]] — Token 计量与 messages 数组的 token 增长关系

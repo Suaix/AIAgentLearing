@@ -2,7 +2,7 @@
 
 > 创建日期：2026-06-29
 > 关联模块：模块 1 — 基础概念
-> 关联笔记：[[llm-statelessness]]（短期记忆 = messages 数组）、[[tokenization]]（Token 是记忆的计量单位）
+> 关联笔记：[[02-llm-statelessness]]（短期记忆 = messages 数组）、[[01-tokenization]]（Token 是记忆的计量单位）
 > 代码：`code/01-foundations/agent_four_elements.py`、`agent_step3.py`
 > 评估记录：待评估
 
@@ -106,7 +106,7 @@ memory.save_long_term("user_name", "小明")
 memory.save_long_term("favorite_city", "北京")
 ```
 
-> 📝 详见 [[llm-statelessness]] — LLM 无状态性决定了短期记忆必须由开发者手动管理。
+> 📝 详见 [[02-llm-statelessness]] — LLM 无状态性决定了短期记忆必须由开发者手动管理。
 
 ---
 
@@ -145,5 +145,5 @@ memory.save_long_term("favorite_city", "北京")
 
 1. Lilian Weng, "LLM Powered Autonomous Agents" — https://lilianweng.github.io/posts/2023-06-23-agent/ — 提出 Agent = Planning + Memory + Tool Use 框架
 2. ReAct Paper (Yao et al., 2022) — https://arxiv.org/abs/2210.03629
-3. [[llm-statelessness]] — 短期记忆与 messages 数组的关系
-4. [[tokenization]] — Token 计数对记忆管理的影响
+3. [[02-llm-statelessness]] — 短期记忆与 messages 数组的关系
+4. [[01-tokenization]] — Token 计数对记忆管理的影响

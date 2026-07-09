@@ -200,7 +200,7 @@ def task2_add_prompt_family():
             "author": "summer",
             "status": "active",
             "system": (
-                "你是{source_lang}翻译专家，擅长将{source_lang}翻译成{target_lang}"
+                "你是{source_lang}翻译专家，擅长将{source_lang}翻译成{target_lang}\n"
                 "## 行为准则\n"
                 "1. 翻译需要保持严谨的风格\n"
                 "2. 只提供{source_lang}翻译成{target_lang}服务，不支持其他语言\n"

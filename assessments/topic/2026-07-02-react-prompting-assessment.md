@@ -134,7 +134,7 @@ Step 4 费曼检验中，学习者将 Action 和 Observation 都归为"由工具
 
 | 资源类型 | 路径 | 说明 |
 |---------|------|------|
-| 专题笔记 | `notes/react-prompting.md` | 本主题的结构化笔记 |
+| 专题笔记 | `notes/08-react-prompting.md` | 本主题的结构化笔记 |
 | 学习记录 | `learning-daily/2026-07-02.md` | 当日学习过程 |
 | 热身代码 | `code/02-prompt-engineering/react_warmup.py` | Step 0 三组对比实验 |
 | 练习代码 | `code/02-prompt-engineering/react_step3.py` | Step 3 四个渐进任务 |

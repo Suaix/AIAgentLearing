@@ -125,7 +125,7 @@
 
 | 资源类型 | 路径 | 说明 |
 |---------|------|------|
-| 专题笔记 | `notes/transformer-attention.md` | 本主题的结构化笔记 |
+| 专题笔记 | `notes/03-transformer-attention.md` | 本主题的结构化笔记 |
 | 学习记录 | `learning-daily/2026-06-30.md` | 当日学习过程 |
 | 热身代码 | `code/01-foundations/attention_warmup_v2.py` | Step 0 手工权重演示 |
 | 练习代码 | `code/01-foundations/attention_step3.py` | Step 3 四个实验 |
