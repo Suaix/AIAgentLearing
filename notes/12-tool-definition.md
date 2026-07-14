@@ -2,7 +2,7 @@
 
 > 创建日期：2026-07-13
 > 关联模块：模块 3 — Tool Use / Function Calling
-> 关联笔记：[[09-json-mode-structured-output]]（JSON Schema 是结构化输出的基础设施）、[[08-react-prompting]]（ReAct 的 Action 步骤需要 Tool 定义来规范）
+> 关联笔记：[[09-json-mode-structured-output]]（JSON Schema 是结构化输出的基础设施）、[[08-react-prompting]]（ReAct 的 Action 步骤需要 Tool 定义来规范）、[[13-json-schema-cross-provider]]（JSON Schema 基础概念 & 各家平台 schema 差异对比）
 > 代码：`code/03-tool-use/tool_definition_warmup.py`、`code/03-tool-use/tool_definition_step3.py`
 > 评估记录：[2026-07-13-tool-definition-assessment.md](../assessments/topic/2026-07-13-tool-definition-assessment.md)
 
