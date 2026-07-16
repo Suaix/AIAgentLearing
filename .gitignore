@@ -24,5 +24,9 @@ venv/
 # Claude
 .claude/
 
+# ChromaDB
+chroma_data/
+chroma_data_step3/
+
 # OS
 Thumbs.db
