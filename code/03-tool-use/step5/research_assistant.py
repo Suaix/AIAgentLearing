@@ -1,9 +1,14 @@
+from ast import List
 from concurrent.futures import ThreadPoolExecutor
 import json
 import os
+from random import Random
+import random
+import time
 from typing import Callable
 
 from dotenv import load_dotenv
+from numpy.random import f
 from openai import OpenAI
 from mock_data import search_kb_lookup, paper_db_query
 
@@ -23,19 +28,42 @@ RETRY_CONFIG = {
 
 
 def web_search(query: str) -> dict:
+    if random.random() <= 0.3:
+        time.sleep(5)
+        return {"error": "timeout", "message": "call web search timeout"}
     result = search_kb_lookup(query)
+
     if result:
         return {"status": "ok", "query": query, "results": json.dumps(result)}
-    else:
-        return {"error": "no_result", "message": "未查询到相关信息"}
+
+    return {"error": "no_result", "message": "未查询到相关信息"}
 
 
-def calcuator(expression: str) -> str:
-    return ""
+def calcuator(expression: str) -> dict:
+    try:
+        allowed = set("0123456789+-*/().% ^")
+        if not all(c in allowed for c in expression):
+            return {"error": "invalid_chars", "message": f"非法字符: '{expression}'"}
+        # 替换 ^ 为 ** 方便运算
+        expr = expression.replace("^", "**")
+        result = eval(expr)
+        return {"status": "ok", "expression": expression, "result": result}
+    except ZeroDivisionError:
+        return {"error": "division_by_zero", "message": "除数不能为0"}
+    except Exception as e:
+        return {"error": "syntax_error", "message": str(e)}
 
 
-def paper_db(query: str) -> str:
-    return ""
+def paper_db(query: str) -> dict:
+    try:
+        raws = paper_db_query(query)
+        return {"status": "ok", "rows": raws, "count": len(raws)}
+    except PermissionError as e1:
+        return {"error": "permission_error", "message": str(e1)}
+    except ValueError as e2:
+        return {"error": "value_error", "message": str(e2)}
+    except Exception as e:
+        return {"error": "common_error", "message": str(e)}
 
 
 web_search_tool = {
@@ -44,8 +72,8 @@ web_search_tool = {
         "name": "web_search",
         "description": "互联网搜索引擎，搜索关键词返回搜索结果。搜索词最好控制在50字以内。",
         "parameters": {
+            "type": "object",
             "properties": {
-                "type": "object",
                 "query": {"type": "string", "description": "搜索关键词"},
             },
             "required": ["query"],
@@ -59,8 +87,8 @@ calculator_tool = {
         "name": "calcuator",
         "description": "计算数学表达式，如：1+2+3。",
         "parameters": {
+            "type": "object",
             "properties": {
-                "type": "object",
                 "expression": {"type": "string", "description": "计算表达式"},
             },
             "required": ["expression"],
@@ -74,9 +102,12 @@ paper_db_tool = {
         "name": "paper_db",
         "description": "查询论文数据库获取论文信息",
         "parameters": {
+            "type": "object",
             "properties": {
-                "type": "object",
-                "query": {"type": "string", "description": "查询关键字"},
+                "query": {
+                    "type": "string",
+                    "description": "数据库查询语句，不支持DROP/DELETE操作，数据库",
+                },
             },
             "required": ["query"],
         },
@@ -95,13 +126,16 @@ def call_with_timeout(
         try:
             result = future.result(timeout=timeout)
             return result
-        except TimeoutError as err:
+        except TimeoutError:
             return {"error": "timeout", "message": "{funname} call timeout"}
         finally:
             executor.shutdown()
 
 
 def run_agent(user_message: str, config: dict | None = None):
+    print(f"*" * 60)
+    print(f"开始处理问题：{user_message}")
+    print(f"*" * 60)
     system_prompt = """'
     你是一个有用的智能研究助手，协助用户完成指定课题的研究工作。
     行为准则：
@@ -109,7 +143,7 @@ def run_agent(user_message: str, config: dict | None = None):
     2. 每个工具失败后最多调用2次，不要死循环地调用。
     3. 如果错误信息展示了替代方案，尝试替代方案。
     """
-    msg_list = [
+    msg_list: list[dict] = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_message},
     ]
@@ -117,21 +151,44 @@ def run_agent(user_message: str, config: dict | None = None):
     tools_call_record: dict[str, int] = {}
 
     cfg = config or RETRY_CONFIG
+    print(f"cfg={cfg}")
     timeout = cfg["timeout"]
     maxturns = cfg["max_turns"]
     maxretries = cfg["max_retries"]
 
-    for turn in range(maxturns):
-        turn += 1
+    for turn in range(1, maxturns + 1):
+        print(f"第 {turn} 轮调用")
         response = client.chat.completions.create(
             model=MODEL, messages=msg_list, tool_choice="auto", tools=TOOLS_LIST
         )
         message = response.choices[0].message
-        msg_list.append(message)
+        print(f"assistant:{message.content}")
+        if not message.tool_calls:
+            msg_list.append({"role": "assistant", "content": message.content})
+            break
+
+        msg_list.append(
+            {
+                "role": "assistant",
+                "content": message.content,
+                "tool_calls": [
+                    {
+                        "id": tc.id,
+                        "type": "function",
+                        "function": {
+                            "name": tc.function.name,
+                            "arguments": tc.function.arguments,
+                        },
+                    }
+                    for tc in message.tool_calls
+                ],
+            }
+        )
 
         for tc in message.tool_calls:
             funname = tc.function.name
-            kwargs = json.dumps(tc.function.arguments, ensure_ascii=False)
+            kwargs = json.loads(tc.function.arguments)
+            print(f"call tool: funname={funname}, kwargs={kwargs}")
             func = TOOLS_MAP[funname]
             if func:
                 result = call_with_timeout(
@@ -140,25 +197,24 @@ def run_agent(user_message: str, config: dict | None = None):
             else:
                 result = {"error": "error_tool_call", "message": "unknown tool call"}
 
+            print(f"tool result:{json.dumps(result)[:100]}")
             msg_list.append(
-                {"role": "tool", "tool_call_id": tc.id, "content": json.dumps(result)}
+                {
+                    "role": "tool",
+                    "tool_call_id": tc.id,
+                    "content": json.dumps(result, ensure_ascii=False),
+                }
             )
             if "error" in result:
                 tools_call_record[funname] = tools_call_record.get(funname, 0) + 1
                 print(
-                    f"{funname}第{tools_call_record[funname]}次调用失败， result为{json.dumps(result)}"
+                    f"{funname}第{tools_call_record[funname]}次调用失败， result为{json.dumps(result)[:100]}"
                 )
                 if tools_call_record[funname] >= maxretries:
-                    print(f"工具调用重试次数已超最大限制")
-                    break
-
+                    print(f"{funname} 工具调用重试次数已超最大限制")
             else:
                 tools_call_record[funname] = 0
-            continue
-
-        # 没有工具调用了，输出结果
-        print(f"assistant:{message.content}")
-        break
+    print(f"=" * 60)
 
 
 if __name__ == "__main__":
@@ -170,7 +226,7 @@ if __name__ == "__main__":
     config = {
         "timeout": 5.0,
         "max_turns": 10,
-        "max_returies": 2,
+        "max_retries": 2,
     }
     for msg in user_msgs:
         run_agent(msg, config=config)
