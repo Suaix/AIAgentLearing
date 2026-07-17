@@ -10,6 +10,19 @@ status: completed
 
 > 一句话总结：向量数据库 = 向量索引（HNSW）+ 元数据过滤（where）+ 持久化存储。核心价值在大规模场景下 O(log n) 对数级检索，小规模时暴力搜索反而更快。
 
+## 为什么选 ChromaDB 做练习
+
+四个和学习阶段直接相关的理由：
+
+| 理由 | 说明 |
+|------|------|
+| **零配置** | `pip install chromadb`，无独立服务进程。不像 Milvus 需 Docker、Qdrant 需启动 server |
+| **Python-native** | API 就是 Python 函数调用，不用学新的查询语言或 gRPC 协议 |
+| **可检查** | `PersistentClient` 底层是 SQLite3 + 二进制文件，可直接打开看内部 |
+| **免费 + 本地** | 无云服务依赖、无 API Key、零成本 |
+
+对比：选 Pinecone 要先注册/建 index/配网络；选 Milvus 要配 Docker + etcd + MinIO。学习阶段目标是理解向量数据库"做了什么"而非"怎么运维"——ChromaDB 摩擦最小。
+
 ## 核心概念
 
 ### 1. 什么是向量数据库
@@ -112,6 +125,48 @@ Chromadb Client
   │   └── Metadata Store（元数据 + SQLite3 索引）
   └── 持久化层（磁盘文件 / 内存）
 ```
+
+### ⑥ 常用向量数据库全景图
+
+| 数据库 | 类型 | 核心优势 | 适用场景 |
+|--------|------|---------|---------|
+| **ChromaDB** | 嵌入式/轻量 | 零配置、Python-native、Apache 2.0 | 原型开发、小规模 PoC、学习 |
+| **FAISS** | 库（非数据库） | Meta 出品、极致性能、GPU 加速 | 亿级向量检索、纯算法场景 |
+| **Qdrant** | 独立服务（Rust） | 高性能、丰富过滤、gRPC API | 中等规模生产、需要复杂过滤 |
+| **Milvus** | 分布式云原生 | 十亿级扩展、存算分离、K8s 原生 | 企业级大规模、多租户 |
+| **Weaviate** | 独立服务 | 原生混合搜索（向量+关键词）、GraphQL | 需要 BM25+向量混合检索 |
+| **Pinecone** | 托管云服务 | 免运维、自动扩缩、SLA 保障 | 不想管基础设施的小团队 |
+| **pgvector** | PostgreSQL 扩展 | 向量 SQL 一把梭、现有 PG 复用 | 已有 PostgreSQL 的团队 |
+| **Elasticsearch** | 搜索引擎+向量 | 全文搜索+向量检索二合一 | 已有 ES 基础设施的团队 |
+
+### ⑦ 生产环境选型决策树
+
+```
+你需要什么？
+│
+├─ 已有 PostgreSQL？
+│   └─ YES → pgvector（零迁移成本，向量 SQL 一把梭）
+│
+├─ 已有 Elasticsearch？
+│   └─ YES → ES 内置向量（全文+向量混合搜索开箱即用）
+│
+├─ 不想管服务器？
+│   └─ YES → Pinecone / Zilliz Cloud（托管 Milvus）
+│       └─ 预算有限？→ 先用 ChromaDB 顶着，够用就别换
+│
+├─ 数据量多大？
+│   ├─ < 100 万条   → ChromaDB / Qdrant（单机够用）
+│   ├─ 100 万~1 亿  → Qdrant / Milvus（分布式开始必要）
+│   └─ > 1 亿       → Milvus / FAISS + 自建（架构决定上限）
+│
+├─ 需要混合搜索（BM25 + 向量）？
+│   └─ YES → Weaviate / Elasticsearch
+│
+└─ 需要 GPU 加速？
+    └─ YES → FAISS / Milvus（都支持 GPU 索引）
+```
+
+🧠 经验法则：**先用 ChromaDB 做到 10 万条，跑通全流程，再根据瓶颈换数据库。** 向量数据库之间的迁移成本远比选型决策重要——所有主流库都支持标准 ANN 算法，API 差异才是切换的真正摩擦。
 
 ## 代码关联
 
